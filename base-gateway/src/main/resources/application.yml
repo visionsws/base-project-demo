@@ -4,7 +4,7 @@ spring:
   application:
     name: base-gateway
   zipkin:
-    base-url: http://localhost:9411/ # zipkin的地址
+    base-url: http://192.168.243.33:9411/ # zipkin的地址
     discovery-client-enabled: false  #让注册中心把它当成url  而不要当成服务
   sleuth:
     sampler:
@@ -18,9 +18,4 @@ spring:
         locator:
           enabled: true  #开启从注册中心动态创建路由的功能
           lower-case-service-id: true #使用小写服务名，默认是大写
-      routes:
-        - id: path_route #路由的ID
-          uri: lb://consumer #此处需要使用lb协议  #匹配后路由地址
-          predicates: # 断言，路径相匹配的进行路由
-            - Path=/consume/message
 

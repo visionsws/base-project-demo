@@ -32,6 +32,7 @@
         <module>base-admin</module>
         <module>base-admin-server</module>
         <module>base-common</module>
+        <module>base-protal</module>
     </modules>
 
     <!--依赖管理 写在dependencyManagement里的依赖 是一种声明  并不会被直接继承到

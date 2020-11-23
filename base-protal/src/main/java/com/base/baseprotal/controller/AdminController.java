@@ -19,8 +19,8 @@ public class AdminController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("hello/{message}")
-    public String hello(@PathVariable String message) {
+    @GetMapping("testSleuth")
+    public String testSleuth() {
         ServiceInstance serviceInstance = loadBalancerClient.choose("base-admin");
         String path = String.format("http://%s:%s/subject/getSubject", serviceInstance.getHost(), serviceInstance.getPort());
         String result = restTemplate.getForObject(path, String.class);
