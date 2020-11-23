@@ -6,6 +6,11 @@ spring:
   cloud:
     nacos:
       server-addr: 192.168.243.33:8848,192.168.243.34:8848
+  zipkin:
+    base-url: http://192.168.243.33:9411
+  sleuth:
+    sampler:
+      probability: 0.5 #设置Sleuth的抽样收集概率
   #数据库配置
   datasource:
     url: jdbc:mysql://192.168.243.20:9097/sa_project?useUnicode=true&useSSL=false&characterEncoding=utf-8
