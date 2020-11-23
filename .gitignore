@@ -1,0 +1,7 @@
+target/
+.idea
+.git
+.settings/
+.classpath
+.project
+admin-client.log/

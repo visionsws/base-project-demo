@@ -1,0 +1,8 @@
+server:
+  port: 8682
+spring:
+  application:
+    name: base-admin-server
+  cloud:
+    nacos:
+      server-addr: 192.168.243.33:8848,192.168.243.33:8848
