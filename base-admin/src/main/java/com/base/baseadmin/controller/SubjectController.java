@@ -6,22 +6,48 @@ import com.base.basemapper.service.ISaSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.Subject;
 import java.util.List;
 
 @Api(tags = "SubjectController", description = "专题管理")
 @Slf4j
 @RequestMapping("/subject")
 @RestController
+@RefreshScope
 public class SubjectController {
+
+    @Value("${user.name}")
+    private String username;
+
+    @Value("${user.id}")
+    private String userid;
+
+    @Value("${user.code}")
+    private String usercode;
+
+    @Value("${spring.datasource.url}")
+    private String datasourceUrl;
+
+    @Value("${spring.datasource.password}")
+    private String password;
 
     @Autowired
     private ISaSubjectService saSubjectService;
+
+    @GetMapping("getNacosConfig")
+    public String getNacosConfig() {
+        System.out.println("username:"+username);
+        System.out.println("userid:"+userid);
+        System.out.println("usercode:"+usercode);
+        System.out.println("datasourceUrl:"+datasourceUrl);
+        System.out.println("password:"+password);
+        return username;
+    }
 
     /**
      * 获取所有的专题

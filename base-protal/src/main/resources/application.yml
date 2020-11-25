@@ -5,9 +5,13 @@ spring:
     name: base-protal
   cloud:
     nacos:
-      server-addr: 192.168.243.33:8848,192.168.243.34:8848
+      server-addr: ${spring.cloud.nacos.config.server-addr}
   zipkin:
     base-url: http://192.168.243.33:9411
   sleuth:
     sampler:
       probability: 0.5 #设置Sleuth的抽样收集概率
+user:
+  name: vision
+  id: 334455
+  code: aacc88899

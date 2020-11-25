@@ -1,0 +1,6 @@
+server:
+  port: 8678
+spring:
+  application:
+    name: base-gateway-name
+
