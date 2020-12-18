@@ -21,10 +21,8 @@ spring:
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-mybatis:
-  mapper-locations:
-    - classpath:dao/*.xml
-    - classpath*:com/**/mapper/*.xml
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
 management:
   endpoints:
     web:
@@ -33,9 +31,6 @@ management:
   endpoint:
     health:
       show-details: always
-logging:
-  file:
-    path: admin-client.log #添加开启admin的日志监控
 user:
   name: yuyanjia
   id: 889900

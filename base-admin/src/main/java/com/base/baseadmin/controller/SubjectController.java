@@ -1,8 +1,9 @@
 package com.base.baseadmin.controller;
 
-import com.base.basecommon.api.CommonResult;
-import com.base.basemapper.entity.SaSubject;
-import com.base.basemapper.service.ISaSubjectService;
+
+import com.base.baseadmin.api.CommonResult;
+import com.base.baseadmin.entity.SaSubject;
+import com.base.baseadmin.service.ISaSubjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -23,7 +24,7 @@ import java.util.List;
 @RefreshScope
 public class SubjectController {
 
-    @Value("${user.name}")
+   /* @Value("${user.name}")
     private String username;
 
     @Value("${user.id}")
@@ -53,10 +54,10 @@ public class SubjectController {
         return username;
     }
 
-    /**
+    *//**
      * 获取所有的专题
      * @return
-     */
+     *//*
     @ApiOperation("获取所有专题")
     @GetMapping("/getSubject")
     public CommonResult getSubject(){
@@ -65,11 +66,11 @@ public class SubjectController {
         return CommonResult.success(list);
     }
 
-    /**
+    *//**
      * 根据id获取专题
      * @param subjectId 专题id
      * @return
-     */
+     *//*
     @ApiOperation("根据id获取专题")
     @RequestMapping(value = "/getSubjectById",method = {RequestMethod.POST,RequestMethod.GET })
     public CommonResult getSubjectById(@RequestParam @ApiParam("专题id") Long subjectId){
@@ -78,11 +79,11 @@ public class SubjectController {
         return CommonResult.success(sa);
     }
 
-    /**
+    *//**
      * 保存专题
      * @param subject
      * @return
-     */
+     *//*
     @ApiOperation("保存专题")
     @PostMapping("/saveSubject")
     public CommonResult saveSubject(@RequestBody SaSubject subject){
@@ -94,6 +95,6 @@ public class SubjectController {
         saSubject.setCreateTime(LocalDateTime.now());
         saSubjectService.save(saSubject);
         return CommonResult.success(saSubject);
-    }
+    }*/
 
 }
