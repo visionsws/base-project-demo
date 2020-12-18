@@ -41,6 +41,12 @@
             <version>2.2.2</version>
         </dependency>
 
+        <!--sleuth请求链路-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

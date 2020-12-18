@@ -2,7 +2,7 @@ server:
   port: 8681
 spring:
   profiles:
-    active: test
+    active: dev
   application:
     name: base-admin
   cloud:

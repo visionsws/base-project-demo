@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        namespace: fee6f36a-be75-4a1b-b8ce-19bffba11dab
+        server-addr: ${spring.cloud.nacos.server-addr}

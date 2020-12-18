@@ -1,8 +1,16 @@
 server:
-  port: 8682
+  port: 9002
 spring:
   application:
     name: base-admin-server
   cloud:
     nacos:
       server-addr: 192.168.243.33:8848,192.168.243.33:8848
+  security: # 配置登录用户名和密码
+    user:
+      name: b-admin
+      password: bluemoondomp123456789
+    boot:  # 不显示base-admin-server的监控信息
+      admin:
+        discovery:
+          ignored-services: ${spring.application.name}

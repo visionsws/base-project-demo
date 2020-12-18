@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Api(tags = "SubjectController", description = "专题管理")
@@ -38,6 +40,8 @@ public class SubjectController {
 
     @Autowired
     private ISaSubjectService saSubjectService;
+
+    private int count = 0;
 
     @GetMapping("getNacosConfig")
     public String getNacosConfig() {
@@ -83,7 +87,13 @@ public class SubjectController {
     @PostMapping("/saveSubject")
     public CommonResult saveSubject(@RequestBody SaSubject subject){
         log.info("调用saveSubject接口，参数为：{}",subject);
-        return CommonResult.success(subject);
+        SaSubject saSubject = new SaSubject();
+        saSubject.setCategoryId(1L);
+        saSubject.setCategoryName("服装专题");
+        saSubject.setTitle("男衬衫"+count++);
+        saSubject.setCreateTime(LocalDateTime.now());
+        saSubjectService.save(saSubject);
+        return CommonResult.success(saSubject);
     }
 
 }
