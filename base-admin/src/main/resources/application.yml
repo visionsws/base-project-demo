@@ -1,5 +1,5 @@
 server:
-  port: 8681
+  port: 9005
 spring:
   profiles:
     active: dev
@@ -8,19 +8,6 @@ spring:
   cloud:
     nacos:
       server-addr: 192.168.243.33:8848,192.168.243.34:8848
-  zipkin:
-    base-url: http://192.168.243.33:9411
-    sleuth:
-      sampler:
-        probability: 0.5 #设置Sleuth的抽样收集概率
-  #数据库配置
-  datasource:
-    url: jdbc:mysql://192.168.243.20:9097/sa_project?useUnicode=true&useSSL=false&characterEncoding=utf-8
-    username: root
-    password: 'b#12345678'
-    # 使用druid数据源
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 management:

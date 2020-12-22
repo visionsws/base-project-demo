@@ -3,12 +3,6 @@ server:
 spring:
   application:
     name: base-gateway
-  zipkin:
-    base-url: http://192.168.243.33:9411/ # zipkin的地址
-    discovery-client-enabled: false  #让注册中心把它当成url  而不要当成服务
-  sleuth:
-    sampler:
-      probability: 1.0 #标识全部采集{0-1}
   cloud:
     nacos:
       discovery:
@@ -18,4 +12,12 @@ spring:
         locator:
           enabled: true  #开启从注册中心动态创建路由的功能
           lower-case-service-id: true #使用小写服务名，默认是大写
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 

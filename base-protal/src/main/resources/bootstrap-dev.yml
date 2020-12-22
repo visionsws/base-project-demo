@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        file-extension: yaml #这里我们获取的yaml格式的配置
+        namespace: 6d019736-88bd-44a3-b96a-e38ec6a2b906
+user:
+  name: vision_dev
+  id: 334455
+  code: dev11222333

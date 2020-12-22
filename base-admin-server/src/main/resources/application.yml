@@ -9,7 +9,7 @@ spring:
   security: # 配置登录用户名和密码
     user:
       name: b-admin
-      password: bluemoondomp123456789
+      password: KvEe7zuE3TPfN7Bh
     boot:  # 不显示base-admin-server的监控信息
       admin:
         discovery:
